@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional residential cleaning and construction project cleaning services from Vaness Residential Cleaning." />
+  <title>Vaness Residential Cleaning | Professional Home & Construction Cleaning</title>
+  <style>
+    :root{
+      --ink:#17372f;
+      --muted:#62756f;
+      --brand:#2f7e6c;
+      --brand-dark:#235f52;
+      --mint:#eaf6f2;
+      --cream:#fbfaf6;
+      --white:#ffffff;
+      --line:#dfe9e5;
+      --shadow:0 18px 50px rgba(29,74,64,.11);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--ink);
+      background:var(--cream);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px,92%);margin:auto}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:.5rem;
+      font-weight:800;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+      color:var(--brand);
+    }
+    .sparkle{width:18px;height:18px;display:inline-block}
+    h1,h2,h3{line-height:1.08;margin:0 0 1rem}
+    h1{font-size:clamp(3rem,7vw,5.8rem);letter-spacing:-.055em;max-width:900px}
+    h2{font-size:clamp(2.2rem,4vw,3.6rem);letter-spacing:-.04em}
+    h3{font-size:1.25rem}
+    p{margin:.25rem 0 1rem;color:var(--muted)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+      min-height:50px;padding:.85rem 1.2rem;border-radius:999px;font-weight:800;
+      border:1px solid transparent;transition:.2s ease;cursor:pointer;
+    }
+    .btn-primary{background:var(--brand);color:#fff;box-shadow:0 10px 24px rgba(47,126,108,.22)}
+    .btn-primary:hover{background:var(--brand-dark);transform:translateY(-1px)}
+    .btn-secondary{border-color:var(--line);background:#fff;color:var(--ink)}
+    .btn-secondary:hover{border-color:#bdd5cc;transform:translateY(-1px)}
+    nav{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:blur(14px);
+      background:rgba(251,250,246,.88);
+      border-bottom:1px solid rgba(223,233,229,.8);
+    }
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.7rem;font-weight:900;letter-spacing:-.02em}
+    .brand-mark{
+      width:42px;height:42px;border-radius:14px;background:var(--brand);
+      display:grid;place-items:center;color:#fff;box-shadow:0 8px 20px rgba(47,126,108,.2);
+    }
+    .nav-links{display:flex;align-items:center;gap:1.6rem;font-weight:700;font-size:.94rem}
+    .nav-links a:hover{color:var(--brand)}
+    .hero{
+      padding:78px 0 54px;
+      position:relative;overflow:hidden;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(47,126,108,.14), transparent 25%),
+        radial-gradient(circle at 15% 30%, rgba(255,255,255,.9), transparent 25%);
+    }
+    .hero::after{
+      content:"";position:absolute;right:-90px;top:120px;width:360px;height:360px;border-radius:50%;
+      border:1px solid rgba(47,126,108,.13);
+      box-shadow:0 0 0 60px rgba(47,126,108,.03),0 0 0 120px rgba(47,126,108,.02);
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative;z-index:1}
+    .hero-copy p{font-size:1.15rem;max-width:650px}
+    .hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin:1.5rem 0 1.7rem}
+    .trust-row{display:flex;gap:1.3rem;flex-wrap:wrap;font-size:.9rem;font-weight:700;color:#45635b}
+    .trust-row span{display:flex;gap:.45rem;align-items:center}
+    .check{
+      width:22px;height:22px;border-radius:50%;background:#dff1eb;color:var(--brand);
+      display:grid;place-items:center;font-size:.8rem;font-weight:900;
+    }
+    .hero-card{
+      background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:32px;padding:28px;
+      position:relative;
+    }
+    .hero-card::before{
+      content:"";position:absolute;inset:12px;border-radius:24px;border:1px dashed #cfe1da;pointer-events:none;
+    }
+    .illustration{
+      min-height:390px;border-radius:24px;
+      background:
+        linear-gradient(145deg,rgba(255,255,255,.75),rgba(234,246,242,.9)),
+        linear-gradient(45deg,#edf8f4,#fff);
+      display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+    }
+    .bubble{position:absolute;border-radius:50%;background:rgba(255,255,255,.75);border:1px solid #d9ebe4}
+    .b1{width:110px;height:110px;top:36px;right:35px}
+    .b2{width:55px;height:55px;top:130px;right:120px}
+    .b3{width:145px;height:145px;bottom:16px;left:20px}
+    .clean-icon{
+      width:160px;height:160px;border-radius:42px;background:var(--brand);color:#fff;
+      display:grid;place-items:center;box-shadow:0 25px 45px rgba(47,126,108,.28);transform:rotate(-3deg)
+    }
+    .clean-icon svg{width:82px;height:82px}
+    .floating-note{
+      position:absolute;right:18px;bottom:18px;background:#fff;border:1px solid var(--line);
+      padding:14px 16px;border-radius:18px;box-shadow:0 12px 26px rgba(26,77,63,.1);font-weight:800
+    }
+    section{padding:88px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:2rem;margin-bottom:34px}
+    .section-head p{max-width:560px}
+    .services{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+      transition:.2s ease;
+    }
+    .card:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(29,74,64,.08)}
+    .icon{
+      width:48px;height:48px;border-radius:15px;background:var(--mint);color:var(--brand);
+      display:grid;place-items:center;margin-bottom:18px
+    }
+    .icon svg{width:24px;height:24px}
+    .why-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:48px;align-items:center}
+    .feature-panel{
+      background:linear-gradient(160deg,#1f5d50,#2f7e6c);color:#fff;border-radius:32px;padding:36px;
+      min-height:430px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--shadow);
+    }
+    .feature-panel p{color:#d7ebe5}
+    .feature-list{display:grid;gap:12px}
+    .feature{
+      display:flex;align-items:flex-start;gap:13px;background:rgba(255,255,255,.09);
+      border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:16px;
+    }
+    .feature strong{display:block;margin-bottom:2px}
+    .feature small{color:#dcece7}
+    .process{display:grid;gap:18px}
+    .step{display:grid;grid-template-columns:60px 1fr;gap:16px;align-items:start}
+    .step-num{
+      width:54px;height:54px;border-radius:18px;background:#fff;border:1px solid var(--line);
+      display:grid;place-items:center;font-weight:900;color:var(--brand);box-shadow:0 8px 18px rgba(29,74,64,.06)
+    }
+    .cta{
+      background:var(--ink);color:#fff;border-radius:36px;padding:52px;
+      display:flex;align-items:center;justify-content:space-between;gap:32px;overflow:hidden;position:relative
+    }
+    .cta::after{
+      content:"";position:absolute;width:300px;height:300px;border-radius:50%;
+      border:1px solid rgba(255,255,255,.09);right:-120px;top:-70px;
+      box-shadow:0 0 0 60px rgba(255,255,255,.025),0 0 0 120px rgba(255,255,255,.018)
+    }
+    .cta p{color:#c8d9d4;max-width:620px}
+    .cta .btn-secondary{position:relative;z-index:1}
+    .contact-actions{display:flex;gap:.7rem;flex-wrap:wrap;position:relative;z-index:1;align-items:flex-start}
+    .contact-action{display:flex;flex-direction:column;gap:.65rem;align-items:flex-start}
+    .contact-reveal{
+      display:none;max-width:320px;background:rgba(255,255,255,.1);color:#fff;
+      border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:12px 14px;
+      font-size:.92rem;font-weight:700;line-height:1.45
+    }
+    .contact-reveal.show{display:block}
+    .contact-reveal a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+    .faq{background:#fff;border-top:1px solid var(--line)}
+    .faq-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px}
+    details{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:18px 20px;margin-bottom:12px}
+    summary{cursor:pointer;font-weight:850;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";color:var(--brand);font-size:1.2rem}
+    details[open] summary::after{content:"–"}
+    details p{margin-top:10px;margin-bottom:0}
+    footer{padding:40px 0;background:#fff;border-top:1px solid var(--line)}
+    .footer-inner{display:flex;justify-content:space-between;gap:2rem;align-items:center;flex-wrap:wrap}
+    .tiny{font-size:.84rem;color:#81908b}
+    @media (max-width:860px){
+      .nav-links a:not(.btn){display:none}
+      .hero-grid,.why-grid,.faq-grid{grid-template-columns:1fr}
+      .service-grid{grid-template-columns:1fr 1fr}
+      .hero-card{max-width:620px}
+      .section-head{display:block}
+      .cta{display:block;padding:38px 28px}
+      .cta .btn{margin-top:10px}
+    }
+    @media (max-width:560px){
+      h1{font-size:3.1rem}
+      .service-grid{grid-template-columns:1fr}
+      .hero{padding-top:52px}
+      section{padding:68px 0}
+      .hero-card{padding:16px;border-radius:26px}
+      .illustration{min-height:310px}
+      .clean-icon{width:130px;height:130px}
+      .cta{border-radius:28px}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a href="#home" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2l1.7 5.3L19 9l-5.3 1.7L12 16l-1.7-5.3L5 9l5.3-1.7L12 2Z"/>
+            <path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15Z"/>
+          </svg>
+        </span>
+        Vaness Residential Cleaning
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="btn btn-primary">Free Estimate</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">
+            <svg class="sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l1.7 5.3L19 9l-5.3 1.7L12 16l-1.7-5.3L5 9l5.3-1.7L12 2Z"/>
+            </svg>
+            A fresher home starts here
+          </span>
+          <h1>A cleaner home. More time for what matters.</h1>
+          <p>
+            Thoughtful, detail-focused home cleaning designed to make your space feel fresh,
+            comfortable, and cared for.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Request a Free Estimate →</a>
+            <a href="#services" class="btn btn-secondary">Explore Services</a>
+          </div>
+          <div class="trust-row">
+            <span><i class="check">✓</i> Personalized cleaning</span>
+            <span><i class="check">✓</i> Detail-focused service</span>
+            <span><i class="check">✓</i> Easy scheduling</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="illustration" aria-label="Professional cleaning illustration">
+            <span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span>
+            <div class="clean-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                <path d="M8 7h8l2 13H6L8 7Z"/>
+                <path d="M10 7V5a2 2 0 0 1 4 0v2"/>
+                <path d="M9.5 12h5"/>
+                <path d="M12 10v4"/>
+                <path d="M18 4l.6 1.8L20.5 6l-1.9.6L18 8.5l-.6-1.9L15.5 6l1.9-.2L18 4Z"/>
+              </svg>
+            </div>
+            <div class="floating-note">✨ Clean. Fresh. Comfortable.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Our Services</span>
+            <h2>Cleaning that fits your home, your routine, and your construction projects.</h2>
+          </div>
+          <p>
+            Choose the level of care your home or project needs. Services can be tailored around your priorities,
+            schedule, and the spaces that matter most.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/>
+              </svg>
+            </div>
+            <h3>Recurring Home Cleaning</h3>
+            <p>Dependable routine cleaning to keep your home looking fresh week after week.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="8"/>
+              </svg>
+            </div>
+            <h3>Deep Cleaning</h3>
+            <p>A more detailed top-to-bottom refresh for homes that need extra attention.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M4 7h16v13H4z"/><path d="M8 7V4h8v3"/><path d="m9 13 2 2 4-4"/>
+              </svg>
+            </div>
+            <h3>Move-In / Move-Out</h3>
+            <p>Help make a new beginning feel spotless—or leave your old space ready for what’s next.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/>
+              </svg>
+            </div>
+            <h3>Kitchen & Bath Focus</h3>
+            <p>Extra care in the high-use spaces where a clean, polished finish makes the biggest difference.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M7 21V9l5-6 5 6v12"/><path d="M9 14h6"/>
+              </svg>
+            </div>
+            <h3>Apartment & Condo Cleaning</h3>
+            <p>Efficient, personalized cleaning for apartments, condos, and smaller living spaces.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 4 4 14l6 6L20 10"/><path d="m12 6 6 6"/><path d="M5 18 3 20"/>
+              </svg>
+            </div>
+            <h3>Construction Project Cleaning</h3>
+            <p>Detailed cleanup for construction and renovation projects, helping remove dust, debris, and jobsite residue before the space is ready for use.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 2l2.2 6.8L21 11l-6.8 2.2L12 20l-2.2-6.8L3 11l6.8-2.2L12 2Z"/>
+              </svg>
+            </div>
+            <h3>Custom Add-Ons</h3>
+            <p>Need special attention somewhere? Build a cleaning plan around your home and priorities.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-us">
+      <div class="container why-grid">
+        <div class="feature-panel">
+          <div>
+            <span class="eyebrow" style="color:#bfe2d8">Why Choose Us</span>
+            <h2>Care you can see in every room.</h2>
+            <p>
+              Vaness Residential Cleaning is built around one simple idea: treat every home with attention,
+              respect, and pride.
+            </p>
+          </div>
+          <div class="feature-list">
+            <div class="feature">
+              <div class="check">✓</div>
+              <div><strong>Detail-focused</strong><small>Thoughtful care from the obvious spaces to the finishing touches.</small></div>
+            </div>
+            <div class="feature">
+              <div class="check">✓</div>
+              <div><strong>Personalized</strong><small>A cleaning plan shaped around your home—not a one-size-fits-all checklist.</small></div>
+            </div>
+            <div class="feature">
+              <div class="check">✓</div>
+              <div><strong>Respectful service</strong><small>Your home, time, and preferences are treated with care.</small></div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <span class="eyebrow">Simple Process</span>
+          <h2>From estimate to fresh home in three easy steps.</h2>
+          <div class="process">
+            <div class="step">
+              <div class="step-num">01</div>
+              <div><h3>Tell us about your home</h3><p>Share the size of your space, what you’d like cleaned, and how often you need service.</p></div>
+            </div>
+            <div class="step">
+              <div class="step-num">02</div>
+              <div><h3>Get a personalized estimate</h3><p>Receive a clear cleaning plan based on your priorities and the level of service you need.</p></div>
+            </div>
+            <div class="step">
+              <div class="step-num">03</div>
+              <div><h3>Enjoy your clean space</h3><p>Choose a convenient time, then come back to a home that feels refreshed and cared for.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top:20px" id="contact">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <span class="eyebrow" style="color:#bfe2d8">Free Estimate</span>
+            <h2>Ready to come home to clean?</h2>
+            <p>
+              Reach out for a personalized cleaning estimate for your home or construction project.
+              Choose how you would like to contact us below.
+            </p>
+          </div>
+          <div class="contact-actions">
+            <div class="contact-action">
+              <button type="button" class="btn btn-secondary" onclick="toggleContact('email-contact')">Send a Message →</button>
+              <div class="contact-reveal" id="email-contact">
+                Please send an email to <a href="mailto:vanessresidentialcleaning@gmail.com?subject=Free%20Cleaning%20Estimate">vanessresidentialcleaning@gmail.com</a>.
+              </div>
+            </div>
+            <div class="contact-action">
+              <button type="button" class="btn btn-secondary" onclick="toggleContact('text-contact')">Text Us</button>
+              <div class="contact-reveal" id="text-contact">
+                Text us at <a href="sms:+16128175226">612-817-5226</a>.
+              </div>
+            </div>
+            <div class="contact-action">
+              <button type="button" class="btn btn-secondary" onclick="toggleContact('call-contact')">Call Us</button>
+              <div class="contact-reveal" id="call-contact">
+                Call us at <a href="tel:+16128175226">612-817-5226</a>.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="container faq-grid">
+        <div>
+          <span class="eyebrow">Frequently Asked</span>
+          <h2>Questions before booking?</h2>
+          <p>These can be customized to match your mom’s actual business policies before the site goes live.</p>
+        </div>
+        <div>
+          <details>
+            <summary>What types of cleaning do you offer?</summary>
+            <p>We offer recurring home cleaning, deep cleaning, move-in/move-out cleaning, apartment and condo cleaning, construction project cleaning, and customizable add-ons.</p>
+          </details>
+          <details>
+            <summary>Can I request certain rooms or priorities?</summary>
+            <p>Yes. Your cleaning plan can be tailored around the spaces and tasks that matter most to you.</p>
+          </details>
+          <details>
+            <summary>How do I get an estimate?</summary>
+            <p>Contact us with a few details about your home and the type of cleaning you’re looking for, and we’ll provide next steps.</p>
+          </details>
+          <details>
+            <summary>Do you offer recurring service?</summary>
+            <p>Recurring service can be arranged based on availability and your preferred cleaning schedule.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        Vaness Residential Cleaning
+      </div>
+      <div class="tiny">© 2026 Vaness Residential Cleaning. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleContact(id) {
+      const selected = document.getElementById(id);
+      const isOpen = selected.classList.contains('show');
+
+      document.querySelectorAll('.contact-reveal').forEach((panel) => {
+        panel.classList.remove('show');
+      });
+
+      if (!isOpen) {
+        selected.classList.add('show');
+      }
+    }
+  </script>
+</body>
+</html>
